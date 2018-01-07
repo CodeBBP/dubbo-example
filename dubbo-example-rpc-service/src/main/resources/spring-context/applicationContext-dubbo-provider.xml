@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="dubbo-example-rpc-service"/>
+
+    <dubbo:registry address="zookeeper://192.168.56.2:2181"/>
+
+    <dubbo:protocol name="dubbo" port="20881"/>
+
+    <!--<dubbo:monitor protocol="registry"/>-->
+
+    <bean id="employeeService" class="com.bbp.dubbo.example.rpc.service.impl.EmployeeServiceImpl"/>
+    <dubbo:service interface="com.bbp.dubbo.example.rpc.api.EmployeeService" ref="employeeService" timeout="10000"/>
+
+
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bbp.dubbo.example.dao.mapper.EmployeeMapper">
+
+  <insert id="insertEmployeeInMapper" parameterType="com.bbp.dubbo.example.dao.model.Employee">
+    insert into upms_emploee (id,name,gender,age)
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{gender,jdbcType=VARCHAR},#{age,jdbcType=VARCHAR})
+  </insert>
+
+  <resultMap id="employeeResult" type="com.bbp.dubbo.example.dao.model.Employee">
+    <id property="id" column="id"/>
+    <result property="name" column="name"/>
+    <result property="gender" column="gender"/>
+    <result property="age" column="age"/>
+  </resultMap>
+
+  <select id="selectEmployeeByName" parameterType="com.bbp.dubbo.example.dao.model.Employee" resultMap="employeeResult">
+    select *from upms_emploee where name=#{name}
+  </select>
+
+</mapper>

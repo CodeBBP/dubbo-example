@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.bbp</groupId>
+  <artifactId>dubbo-example</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>dubbo-example-common</module>
+    <module>dubbo-example-dao</module>
+    <module>dubbo-example-client</module>
+    <module>dubbo-example-rpc-api</module>
+    <module>dubbo-example-rpc-service</module>
+    <module>dubbo-example-server</module>
+    <module>test-server</module>
+  </modules>
+  <packaging>pom</packaging>
+
+  <name>dubbo-example</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+
+</project>
